@@ -1,0 +1,41 @@
+PODS:
+  - barcode_scanner (1.0.0):
+    - Flutter
+    - ScanbotBarcodeScannerSDK (= 3.6.0)
+  - Flutter (1.0.0)
+  - flutter_barcode_scanner (2.0.0):
+    - Flutter
+  - permission_handler_apple (9.1.1):
+    - Flutter
+  - ScanbotBarcodeScannerSDK (3.6.0)
+
+DEPENDENCIES:
+  - barcode_scanner (from `.symlinks/plugins/barcode_scanner/ios`)
+  - Flutter (from `Flutter`)
+  - flutter_barcode_scanner (from `.symlinks/plugins/flutter_barcode_scanner/ios`)
+  - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
+
+SPEC REPOS:
+  trunk:
+    - ScanbotBarcodeScannerSDK
+
+EXTERNAL SOURCES:
+  barcode_scanner:
+    :path: ".symlinks/plugins/barcode_scanner/ios"
+  Flutter:
+    :path: Flutter
+  flutter_barcode_scanner:
+    :path: ".symlinks/plugins/flutter_barcode_scanner/ios"
+  permission_handler_apple:
+    :path: ".symlinks/plugins/permission_handler_apple/ios"
+
+SPEC CHECKSUMS:
+  barcode_scanner: f02935fb260e0018d783fffb6555d478ec57fc26
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  flutter_barcode_scanner: 7a1144744c28dc0c57a8de7218ffe5ec59a9e4bf
+  permission_handler_apple: e76247795d700c14ea09e3a2d8855d41ee80a2e6
+  ScanbotBarcodeScannerSDK: fac0c9f5da6a2a9c3c08d9bfcca9fc8e93d2b570
+
+PODFILE CHECKSUM: f393a3e970b6bcad3ccd24fdc079653b90c459b1
+
+COCOAPODS: 1.13.0
