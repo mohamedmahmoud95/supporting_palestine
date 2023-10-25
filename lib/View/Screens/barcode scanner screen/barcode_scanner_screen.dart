@@ -7,28 +7,38 @@ class ProductInfo {
   final String productName;
   final String companyName;
   final List<String> keywords;
-  final List<String> allergens;
   final String countries;
   final String imageUrl;
+  final String productCode;
+  final String creator;
+  // final String nutritionData;
+  // final String nutritionDataPer;
+  // final String servingQuantity;
+  // final String servingSize;
+  final String productStatus;
 
   ProductInfo({
     required this.productName,
     required this.companyName,
     required this.keywords,
-    required this.allergens,
     required this.countries,
     required this.imageUrl,
+    required this.productCode,
+    required this.creator,
+    required this.productStatus,
   });
 
   factory ProductInfo.fromJson(Map<String, dynamic> json) {
     final productData = json['product'];
     return ProductInfo(
-      productName: productData['product_name'] ?? '',
-      companyName: productData['brands'] ?? '',
+      productName: productData['product_name'] ?? 'unknown',
+      companyName: productData['brands'] ?? 'unknown',
       keywords: List<String>.from(productData['_keywords'] ?? []),
-      allergens: List<String>.from(productData['allergens_tags'] ?? []),
-      countries: productData['countries'] ?? '',
-      imageUrl: productData['image_url'] ?? '',
+      countries: productData['countries'] ?? 'unknown',
+      imageUrl: productData['image_url'] ?? 'unknown',
+      productCode: productData['code'] ?? 'unknown',
+      creator: productData['creator'] ?? 'unknown',
+      productStatus: json['status_verbose'] ?? 'unknown',
     );
   }
 }
@@ -61,20 +71,23 @@ class _BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
     productName: '',
     companyName: '',
     keywords: [],
-    allergens: [],
     countries: '',
     imageUrl: '',
+    productCode: '',
+    creator: '',
+    productStatus: '',
   );
 
-  void resetProductInfo(ProductInfo productInfo)
-  {
+  void resetProductInfo(ProductInfo productInfo) {
     productInfo = ProductInfo(
       productName: '',
       companyName: '',
       keywords: [],
-      allergens: [],
       countries: '',
       imageUrl: '',
+      productCode: '',
+      creator: '',
+      productStatus: '',
     );
   }
 
@@ -111,9 +124,11 @@ class _BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
             Text('Product Name: ${productInfo.productName}'),
             Text('Company Name: ${productInfo.companyName}'),
             Text('Keywords: ${productInfo.keywords.join(", ")}'),
-            Text('Allergens: ${productInfo.allergens.join(", ")}'),
             Text('Countries: ${productInfo.countries}'),
             Text('Image URL: ${productInfo.imageUrl}'),
+            Text('Product Code: ${productInfo.productCode}'),
+            Text('Creator: ${productInfo.creator}'),
+            Text('Product Status: ${productInfo.productStatus}'),
           ],
         ),
       ),
